@@ -2,7 +2,7 @@
   "name": "memory-game",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://chaczyk113.github.io/MemoryGame/",
+  "homepage": "https://kubazachacz.github.io/MemoryGame/",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
