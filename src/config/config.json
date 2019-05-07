@@ -1,0 +1,67 @@
+{
+    "gameFieldSize": 1000,
+    "lvlRange": [
+        {
+            "size": 8,
+            "cols": 4
+          },
+          {
+            "size": 18,
+            "cols": 6
+          },
+          {
+            "size": 32,
+            "cols": 8
+          },
+          {
+            "size": 8,
+            "cols": 4
+          },
+          {
+            "size": 18,
+            "cols": 6
+          },
+          {
+            "size": 32,
+            "cols": 8
+          }
+    ],
+    "lvlGroups": 2,
+    "reverseTime": [500, 800, 1200, 2300, 3400, 4000],
+    "lvlChances": [-1, -1, -1, 1, 2, 3],
+    "cardColors": ["#f03e3e", "#12b886", "#228be6", "#495057"],
+    "reverseIcon":"flag",
+    "icons": [
+        "truck-monster",
+        "space-shuttle",
+        "dove",
+        "user-astronaut",
+        "quidditch",
+        "coffee",
+        "beer",
+        "skull",
+        "bomb",
+        "bell",
+        "bullhorn",
+        "comments",
+        "copy",
+        "cut",
+        "dice-five",
+        "eye",
+        "gamepad",
+        "globe-americas",
+        "grin-tears",
+        "grin-beam",
+        "hourglass-half",
+        "map-marked-alt",
+        "dice-two",
+        "pizza-slice",
+        "robot",
+        "shopping-basket",
+        "thumbs-up",
+        "users",
+        "kiss-wink-heart",
+        "poo",
+        "ice-cream"
+    ]
+}

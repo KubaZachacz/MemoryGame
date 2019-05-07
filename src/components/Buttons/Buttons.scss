@@ -1,0 +1,107 @@
+@mixin default-btn($color) {
+    text-align: center;
+    padding: 15px 0;
+    border-radius: 10px;
+    color: #FFF;
+    background-color: $color;
+    border-bottom: 4px solid darken($color, 20%);
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+    &:hover {
+        background-color: darken($color, 30%);
+    }
+}
+
+
+@mixin centerXY(){
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.Button {
+    .header-btn {
+        @include default-btn(#339af0);
+        width: 200px;
+        font-size: 24px;
+        font-weight: 700;
+        @include centerXY();
+    }
+}
+
+.ActionButton {
+    position: relative;
+    border: none;
+    @include default-btn(#339af0);
+    padding: 0;
+    width: 84px;
+    height: 84px;
+    font-size: 36px;
+    overflow: hidden;
+
+    .ScrollableContent {
+        height: 168px;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        transition: top 0.7s;
+        &:hover {
+            top: -74px;
+        }
+        span {
+            box-sizing: border-box;
+            display: inline-block;
+            padding: 15px 0;
+            height: 84px;
+            // height: 84px;
+            // width: 84px;
+            width: 84px;
+            text-align: center;
+        }
+    }
+
+    .Locked {
+        background-color: #1b4f7a;
+        height: 84px;
+        cursor: default;
+        i {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 100%;
+            //
+            // transform: translateX(-50%);
+        }
+    }
+}
+
+.buttonPressed {
+    border-bottom: none;
+    border-top: 4px solid darken(#339af0, 30%);
+    background-color: darken(#339af0, 20%);
+}
+
+.ArrowBtn{
+    border: none;
+    @include default-btn(#339af0);
+    width: 42px;
+    font-size: 30px;
+    padding: 5px;
+    &:disabled {
+        background-color: darken(#339af0, 20%);
+        cursor: default;
+        border-bottom: none;
+        border-top: 4px solid darken(#339af0, 30%);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .ActionButton, .ArrowBtn {
+        transform: scale(0.8)
+    }
+}
+

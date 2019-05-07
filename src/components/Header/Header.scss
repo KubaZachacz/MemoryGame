@@ -1,0 +1,41 @@
+.Header {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    // background-color: rgba(21,86,146,1);
+    background: linear-gradient(#155692, #1b7dd4);
+    background-image: url('./images/background3.svg'), linear-gradient(#155692, #1b7dd4);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom center;
+    overflow: hidden;
+
+    h1 {
+        width: 100%;
+        color: #FFF;
+        font-size: 48px;
+        font-weight: 800;
+        margin-top: 50px;
+        text-align: center;
+    }
+    h2 {
+        width: 100%;
+        color: #FFF;
+        font-size: 36px;
+        margin-top: -30px;
+        text-align: center;
+    }
+    .link {
+        position: absolute;
+        bottom: 15px;
+        font-size: 20px;
+        font-weight: 700;
+        text-decoration: underline;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: font-size .2s;
+        &:hover{
+            font-size: 24px;
+        }
+    }
+}
