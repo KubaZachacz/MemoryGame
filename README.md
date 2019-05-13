@@ -9,3 +9,4 @@
 - React
 - JS ES6 
 
+Legacy repo: [https://github.com/chaczyk113/MemoryGame](https://github.com/chaczyk113/MemoryGame "chaczyl13")
