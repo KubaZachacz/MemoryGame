@@ -11,6 +11,14 @@ import Footer from '../../components/Footer/Footer';
 
 import config from '../../config/config.json';
 
+// const values to set proper game area size
+const WIDTH_HEIGHT_RATIO = 1.66;
+const MENU_HEIGHT = 150;
+const FOOTER_HEIGHT = 32;
+const GAME_MEDIA_BREAKPOINT = 768;
+const GAME_SCALE = 0.96;
+
+
 class App extends Component {
   VERSION = '1.1';
   state = {
@@ -44,28 +52,22 @@ class App extends Component {
     gameScore[this.state.lvl].played++;
     gameScore[this.state.lvl].last = score
     // new Record
-    if (this.state.lvl < 3 && gameScore[this.state.lvl].top > 0 && score < gameScore[this.state.lvl].top) {
+    // checks if played for the first time or it's a normal mode and clicks < top or hard mode and matches > top
+    if ((gameScore[this.state.lvl].top === 0)
+      || (this.state.lvl < 3 && gameScore[this.state.lvl].top > 0 && score < gameScore[this.state.lvl].top)
+      || (this.state.lvl >= 3 && gameScore[this.state.lvl].top > 0 && score > gameScore[this.state.lvl].top)) {
       gameScore[this.state.lvl].top = score;
       isNewRecord = true;
     }
-    else if (gameScore[this.state.lvl].top === 0) {
-      gameScore[this.state.lvl].top = score;
-      isNewRecord = true;
-    }
-    else if (this.state.lvl >= 3 && gameScore[this.state.lvl].top > 0 && score > gameScore[this.state.lvl].top) {
-      gameScore[this.state.lvl].top = score;
-      isNewRecord = true;
-    }
-    if (this.state.lvl < 3) {
+
+    if ((this.state.lvl < 3) || (score === config.lvlRange[this.state.lvl].size / 2)) {
       isWin = true;
     }
-    else if (score === config.lvlRange[this.state.lvl].size/2) {
-      isWin = true;
-    }
+
     // progress made
     if (isWin && gameProgress < 6 && this.state.lvl === gameProgress) {
-      gameProgress++;
-    }
+        gameProgress++;
+      }
     // save progress
     this.setState({ gameScore: gameScore, gameProgress: gameProgress, isNewRecord: isNewRecord, isWin: isWin })
     if (typeof (Storage) !== "undefined") {
@@ -107,7 +109,7 @@ class App extends Component {
       }
       this.isGameVisible = true;
       this.isLvlSelected = true;
-      this.setState({ lvl: lvl, lvlGroup:lvlGroup });
+      this.setState({ lvl: lvl, lvlGroup: lvlGroup });
     }
   }
 
@@ -118,13 +120,13 @@ class App extends Component {
   }
 
   componentDidMount() {
+    // sets gamearea size to fit 100vh with menu and footer
+    let height = window.innerHeight - MENU_HEIGHT - FOOTER_HEIGHT;
+    let width = height * WIDTH_HEIGHT_RATIO;
 
-    let height = window.innerHeight - 150 - 32;
-    let width = height * 1.66;
-
-    if (window.innerWidth < 768) {
-      width = window.innerWidth * 0.96;
-      height = width / 1.66;
+    if (window.innerWidth < GAME_MEDIA_BREAKPOINT) {
+      width = window.innerWidth * GAME_SCALE;
+      height = width / WIDTH_HEIGHT_RATIO;
     }
 
     this.setState({

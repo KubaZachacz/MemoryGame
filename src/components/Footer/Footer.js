@@ -5,7 +5,7 @@ const footer = (props) => {
 
     return (
         <div className="Footer">
-            <p>React practice game project, by JZ.</p>
+            <p>React practice game project, by <a href="mailto:zachacz.jakub@gmail.com">Jakub Zachacz</a> 2019.</p>
         </div>
     )
 }

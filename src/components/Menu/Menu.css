@@ -1,1 +1,0 @@
-.Menu{background-color:#105391;overflow:hidden}.Menu .wrapper{width:1200px;height:100%;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap}@media only screen and (max-width: 1200px){.Menu .wrapper{width:100%;justify-content:space-around}}@media only screen and (max-width: 900px){.Menu .scoreList{order:-1}}
